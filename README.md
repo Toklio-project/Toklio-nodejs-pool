@@ -196,6 +196,8 @@ Explanation for each field:
 "cnAlgorithm": "cryptonight",
 "cnVariant": 1,
 "cnBlobType": 0,
+"includeHeight":false, /*true to include block.height in job to miner*/
+"includeAlgo":"cn/wow", /*wownero specific change to include algo in job to miner*/
 
 /* Logging */
 "logging": {
@@ -359,7 +361,8 @@ Explanation for each field:
     "depth": 60,
     "poolFee": 0.8, // 0.8% pool fee (1% total fee total including donations)
     "devDonation": 0.2, // 0.2% donation to send to pool dev
-    "networkFee": 0.0, // Network/Governance fee (used by some coins like Loki)
+    "networkFee": 0.0, // Network/Governance fee (used by some coins)
+    "useFirstVout": false, // Should be true for a coin like Loki that has multiple block reward recipients where first is miner reward
     
     /* Some forknote coins have an issue with block height in RPC request, to fix you can enable this option.
        See: https://github.com/forknote/forknote-pool/issues/48 */
